@@ -82,12 +82,22 @@ public class MaxHeap<T extends Comparable<T>> {
 
   public void sort(T[] vet) {
     v = vet;
-    size = vet.length-1;
+    size = vet.length;
+    int n = size-1;
 
     // 1. Construção do maxheap
-    print();
+    for(int k=n/2; k>=1; k--)
+      sink(k,n);
+    // print();
 
     // 2. Ordenação em si
+    while(n>1) {
+      T aux = v[1];
+      v[1] = v[n];
+      v[n] = aux;
+      n--;
+      sink(1,n);
+    }
   }
 
   public void print() {
