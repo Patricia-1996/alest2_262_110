@@ -81,6 +81,12 @@ public:
             sp = sp / 2;
         }
     }
+
+    void sort(T vet[], int tam) {
+        heap.assign(data, data+tam);
+        int n = size() - 1;
+        print();
+    }
 };
 #endif
 

@@ -59,3 +59,10 @@ class MaxHeap:
     def getData(self): # retorna o conteúdo do heap como uma lista - exceto a posição 0
         return self.heap[1:]
 
+    def sort(self, vet):
+        self.heap = vet
+
+        # 1. Construção do maxheap
+
+        # 2. Ordenação em si
+
