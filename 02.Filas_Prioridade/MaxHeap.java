@@ -49,7 +49,8 @@ public class MaxHeap<T extends Comparable<T>> {
     if (size == 1)
       throw new UnsupportedOperationException("MaxHeap vazio!");
     T res = v[1];
-    v[1] = v[--size];
+    size--;
+    v[1] = v[size];
     sink(1,size);
     return res;
   }
@@ -79,9 +80,19 @@ public class MaxHeap<T extends Comparable<T>> {
     }
   }
 
+  public void sort(T[] vet) {
+    v = vet;
+    size = vet.length-1;
+
+    // 1. Construção do maxheap
+    print();
+
+    // 2. Ordenação em si
+  }
+
   public void print() {
     System.out.println("");
-    print(1, 1, 32);
+    print(1, 1, 40);
     System.out.println("");
   }
 
